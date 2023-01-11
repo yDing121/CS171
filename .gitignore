@@ -1,0 +1,4 @@
+## Ignore compressed files and folders
+
+*.rar
+*.zip
