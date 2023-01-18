@@ -5,7 +5,13 @@ class BrokenTypewriter {
 
     public static void main(String[] args) {
         String theString = getInputFromUser();
-        retypeBadely(theString);
+
+        while (!theString.toLowerCase().equals("stop")) {
+            retypeBadely(theString);
+            theString = getInputFromUser();
+        }
+        System.out.println("0k");
+        return;
         // System.out.println('Z' > 'N');
     }
 
@@ -28,7 +34,7 @@ class BrokenTypewriter {
 
             if (counter > 2) {
                 counter = 0;
-                string = string.substring(0, i+1) + "." + string.substring(i+1);
+                string = string.substring(0, i + 1) + "." + string.substring(i + 1);
             }
             i++;
         }
