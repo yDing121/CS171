@@ -1,5 +1,5 @@
 public class GenericCollectionTest {
     public static void main(String[] args) {
-        GenericCollection gc = new GenericCollection();
+        GenericCollection gc = new GenericCollection("bob", "bob");
     }
 }
