@@ -5,7 +5,13 @@ class BrokenTypewriter {
 
     public static void main(String[] args) {
         String theString = getInputFromUser();
-        retypeBadely(theString);
+
+        while (!theString.toLowerCase().equals("stop")) {
+            retypeBadely(theString);
+            theString = getInputFromUser();
+        }
+        System.out.println("0k");
+        return;
         // System.out.println('Z' > 'N');
     }
 
@@ -19,16 +25,6 @@ class BrokenTypewriter {
     public static String retypeBadely(String string) {
         // Add '.' after every third letter between 'N' and 'Z'
         int counter = 0;
-        // for (int i=string.length()-1; i>=0; i--){
-        // if (string.toLowerCase().charAt(i) > 'n' && string.toLowerCase().charAt(i) <
-        // 'z'){
-        // counter++;
-        // }
-        // if (counter > 2){
-        // counter = 0;
-        // string = string.substring(0,i+1) + "." + string.substring(i+1);
-        // }
-        // }
         int i = 0;
         while (i < string.length()) {
             if (string.toLowerCase().charAt(i) > 'n' && string.toLowerCase().charAt(i) < 'z') {
@@ -38,7 +34,7 @@ class BrokenTypewriter {
 
             if (counter > 2) {
                 counter = 0;
-                string = string.substring(0, i+1) + "." + string.substring(i+1);
+                string = string.substring(0, i + 1) + "." + string.substring(i + 1);
             }
             i++;
         }
