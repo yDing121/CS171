@@ -14,4 +14,11 @@ public class GenericCollection<Item extends Comparable<Item>>{
         
         System.out.println(item.compareTo(anotherItem));
     }
+
+    // Print array of any generic type
+    public static <T> void printArray(T[] array){
+        for (T element: array){
+            System.out.print(element);
+        }
+    }
 }
