@@ -9,8 +9,8 @@ public class StackArrayClient {
         //     System.out.println(stackArray.pop());
         // }
         
-        for (String i: stackArray){
-            System.out.println(i);
+        for (String s: stackArray){
+            System.out.println(s);
         }
     }
 }

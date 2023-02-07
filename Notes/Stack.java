@@ -3,7 +3,7 @@ public interface Stack<Item> extends Iterable<Item>{
 
     int size();
 
-    // void push(Item item);
+    void push(Item item);
 
     Item pop();
 
