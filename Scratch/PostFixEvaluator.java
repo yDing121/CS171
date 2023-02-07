@@ -52,9 +52,7 @@ public class PostFixEvaluator {
                         break;
                 }
             }
-
         }
-
         return stack.pop();
     }
 }
