@@ -88,6 +88,9 @@ public class LatinSquares {
         
         public void push(Choice choice) {
             //// ADD CODE HERE ////
+            if (cur >= n*n){
+                throw new IndexOutOfBoundsException();
+            }
             int c = 0;
             for (int i=0; i<n; i++){
                 for (int j=0; j<n; j++){
@@ -104,11 +107,17 @@ public class LatinSquares {
         public Choice peek() {
             //// ADD CODE HERE ////
             // if (cur == 0 || cur >= n*n) return null;
+            if (this.isEmpty()){
+                return null;
+            }
             return choices[(cur-1)/n][(cur-1)%n];
         }
         
         public Choice pop() {
             //// ADD CODE HERE ////
+            if (isEmpty()){
+                throw new RuntimeException("Stack Underflow");
+            }
             Choice ret = peek();
             choices[(cur-1)/n][(cur-1)%n] = null;
             cur--;
@@ -235,7 +244,7 @@ public class LatinSquares {
     public void reactToSolutionFound() {
         //// ADD CODE HERE ////
         System.out.println(String.format("Solution number %d:", stackOfSolutions.size()));
-        // System.out.println(stackOfChoicesMade);
+        System.out.println(stackOfChoicesMade);
         stackOfSolutions.push(stackOfChoicesMade.toString().substring(
             0, stackOfChoicesMade.toString().length()-1)
             );
