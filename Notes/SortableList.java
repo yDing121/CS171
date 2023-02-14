@@ -47,7 +47,7 @@ public class SortableList {
         }
     }
 
-    private void __selectionSort_R(Node h){
+    private void selectionSort_R(Node h){
         if (h.next == null) return;
         Node minNode = h;
         for (Node cur = h.next; cur!=null; cur = cur.next){
@@ -57,11 +57,11 @@ public class SortableList {
         }
         exch(minNode, h);
         System.out.println(this);
-        __selectionSort_R(h.next);
+        selectionSort_R(h.next);
     }
 
     public void selectionSort_R(){
-        __selectionSort_R(head);
+        selectionSort_R(head);
     }
 
     public void fillWithRandomInts(int n, int maxInclusive){
