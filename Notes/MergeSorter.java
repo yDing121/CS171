@@ -15,6 +15,10 @@ public class MergeSorter<Item extends Comparable<Item>> {
 
     }
 
+    // public void randomize(int n, int max){
+    //     Item[] tmp = (Item[]) (new Comparable[n]);
+    // }
+
     public static void main(String[] args) {
         
     }
