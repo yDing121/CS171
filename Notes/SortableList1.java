@@ -1,5 +1,5 @@
 import java.lang.Math;
-public class SortableList {
+public class SortableList1 {
     private class Node{
         int num;
         Node next;
@@ -89,7 +89,7 @@ public class SortableList {
     }
 
     public static void main(String[] args) {
-        SortableList list = new SortableList();
+        SortableList1 list = new SortableList1();
         list.fillWithRandomInts(25,10);
         System.out.println(list);
         list.selectionSort_R();

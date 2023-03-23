@@ -20,23 +20,6 @@ public class Bst<Key extends Comparable<Key>, Value>{
 
     Node root;
 
-    // public Value get(Key key){
-    //     Node n = root;
-
-    //     while (n != null) {
-    //         int cmp = key.compareTo(n.key);
-    //         if (cmp > 0){
-    //             n = n.right;
-    //         }
-    //         else if (cmp < 0){
-    //             n = n.left;
-    //         }
-    //         else{
-    //             return n.val;
-    //         }
-    //     }
-    //     return null;
-    // }
 
     public Value get(Key key){
         return get(root, key);
@@ -63,35 +46,6 @@ public class Bst<Key extends Comparable<Key>, Value>{
         n.count = 1 + size(n.left) + size(n.right); //fixes count!
         return n;
     }
-
-    // public Value rGet(Key key){
-    //     return rGet(root, key);
-    // }
-
-    // private Value rGet(Node n, Key key){
-    //     if (n == null) return null;
-    //     int cmp = key.compareTo(n.key);
-    //     if (cmp < 0) return rGet(n.left, key);
-    //     else if (cmp > 0) return rGet(n.right, key);
-    //     else return n.val;
-    // }
-
-    // public void rPut(Key key, Value val){
-    //     root = rput(root, key, val);
-    // }
-
-
-    // private Node rput(Node n, Key key, Value val){
-    //     if (n == null) return new Node(key, val);
-
-    //     int cmp = key.compareTo(n.key);
-    //     if (cmp < 0) n.left = rput(n.left, key, val);
-    //     else if (cmp > 0) n.right = rput(n.right, key, val);
-    //     else n.val = val;
-
-    //     return n;
-    // }
-
     public Iterable<Key> keysPreOrder(){
         Deque<Key> q = new ArrayDeque<Key>();
         enqueueKeysPreOderFromNode(root, q);
@@ -117,6 +71,7 @@ public class Bst<Key extends Comparable<Key>, Value>{
         enqueueKeysPostOderFromNode(n.right, q);
         q.add(n.key);
     }
+
     //infix order
     public Iterable<Key> keysInOrder(){
         Deque<Key> q = new ArrayDeque<Key>();
@@ -179,34 +134,106 @@ public class Bst<Key extends Comparable<Key>, Value>{
         return n;
     }
 
-    public void delete(Key key){
-        root = delete(key, root);
-    }
+    // public void delete(Key key){
+    //     root = delete(key, root);
+    // }
 
-    private Node delete(Key key, Node n){
-        if (n == null) return null;
+    // private Node delete(Key key, Node n){
+    //     if (n == null) return null;
 
-        int cmp = key.compareTo(n.key);
-        if (cmp < 0){
-            n.left = delete(key, n.left);
-            n.count = 1 + size(n.left) + size(n.right);
-            return n;
-        }
-        else if (cmp > 0){
-            n.right = delete(key, n.right);
-            n.count = 1 + size(n.right);
-            return n;
-        }
+    //     int cmp = key.compareTo(n.key);
+    //     if (cmp < 0){
+    //         n.left = delete(key, n.left);
+    //         n.count = 1 + size(n.left) + size(n.right);
+    //         return n;
+    //     }
+    //     else if (cmp > 0){
+    //         n.right = delete(key, n.right);
+    //         n.count = 1 + size(n.right);
+    //         return n;
+    //     }
 
-        if (n.right == null) return n.left;
+    //     if (n.right == null) return n.left;
         
-        Node t = n;
-        n = keyWithRank(t.right, 0);
-        n.left = t.left;
-        n.count = 1 + size(n.left) + size(n.right);
-        return n;
+    //     Node t = n;
+    //     n = keyWithRank(t.right, 0);
+    //     n.left = t.left;
+    //     n.count = 1 + size(n.left) + size(n.right);
+    //     return n;
+    // }
+public void delete(Key key) {
+    root = delete(root, key);
+}
+
+private Node delete(Node n, Key key) {  
+    
+    if (n == null)                      // there is nothing
+        return null;                    // to delete
+   
+ 
+    int cmp = key.compareTo(n.key);
+
+    
+    if (cmp < 0)                        // key < n.key,
+        n.left = delete(n.left, key);   // so search left
+
+    
+    else if (cmp > 0)                   // key > n.key,
+        n.right = delete(n.right, key); // so search right
+
+    
+    else {                              // key == n.key
+                                        // found it! node to
+                                        // delete is n
+
+        
+        if (n.right == null)            // n has no right child, 
+            return n.left;              // so return left child
+                                        // note, if n has no 
+                                        // left child either
+                                        // this returns null
+
+        
+        Node t = n;                     // protect n from garbage
+                                        // collection. we'll need
+                                        // it later...
+
+ 
+        n = min(t.right);               // let n get the key and
+                                        // value of the minimum 
+                                        // node in the right 
+                                        // subtree -- this will
+                                        // be the successor of
+                                        // the previous n. we'll
+                                        // update the left and 
+                                        // right links next...
+
+        
+        n.right = deleteMin(t.right);   // removes the 
+                                        // aforementioned 
+                                        // successor from the
+                                        // right subtree of the 
+                                        // old n (stored in t)
+                                        // then this tree is put
+                                        // to the right of the 
+                                        // new n.
+
+                                                
+        n.left = t.left;                // make the new n's 
+                                        // left link the same 
+                                        // as the original n's 
+                                        // left link
     }
 
+    n.count = size(n.left) +            // update the count 
+              size(n.right) + 1;        // for this new n 
+                                        // Note: deleteMin() 
+                                        // updated other
+                                        // counts affected
+
+    return n;
+
+}
     public static void main(String[] args) {
         Bst<Character, Integer> bst = new Bst<Character, Integer>();
         Character[] chrs = {'S','E','B','Y','C','A','R','H','M','X','Z'};
