@@ -1,0 +1,148 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "jan17",
+            "request": "launch",
+            "mainClass": "jan17",
+            "projectName": "Notes_b9ecdb21",
+            "args": "bla"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BagArray",
+            "request": "launch",
+            "mainClass": "BagArray",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "Bruhhh",
+            "request": "launch",
+            "mainClass": "Bruhhh",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "Bst",
+            "request": "launch",
+            "mainClass": "Bst",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "Bst2",
+            "request": "launch",
+            "mainClass": "Bst2",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "Buttons",
+            "request": "launch",
+            "mainClass": "Buttons",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "ExceptionFun",
+            "request": "launch",
+            "mainClass": "ExceptionFun",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "FailFastCollection",
+            "request": "launch",
+            "mainClass": "FailFastCollection",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "GenericCollectionTest",
+            "request": "launch",
+            "mainClass": "GenericCollectionTest",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "Graph",
+            "request": "launch",
+            "mainClass": "Graph",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "LinkyListy",
+            "request": "launch",
+            "mainClass": "LinkyListy",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "MaxHeap",
+            "request": "launch",
+            "mainClass": "MaxHeap",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "MergeSorter",
+            "request": "launch",
+            "mainClass": "MergeSorter",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "PostFixEvaluator",
+            "request": "launch",
+            "mainClass": "PostFixEvaluator",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "RecursiveFun",
+            "request": "launch",
+            "mainClass": "RecursiveFun",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "SortableHTList",
+            "request": "launch",
+            "mainClass": "SortableHTList",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "SortableList1",
+            "request": "launch",
+            "mainClass": "SortableList1",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "StackArrayClient",
+            "request": "launch",
+            "mainClass": "StackArrayClient",
+            "projectName": "Notes_b9ecdb21"
+        },
+        {
+            "type": "java",
+            "name": "Stacktest",
+            "request": "launch",
+            "mainClass": "Stacktest",
+            "projectName": "Notes_b9ecdb21"
+        }
+    ]
+}
